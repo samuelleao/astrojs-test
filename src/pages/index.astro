@@ -1,23 +1,4 @@
 ---
-import Document from "@/layouts/document.astro";
-import { MorePokemons } from "@/components/MorePokemons"
-const currentPage = 1
-const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${currentPage}`);
-const data = await response.json();
-const pokemons: Pokemon[] = data?.results;
-import { Badge } from "@/components/ui/badge";
-export interface Pokemon {
-  name: string;
-  url: string;
-}
+import Home from "@/pages/home/index.astro"
 ---
-<Document title="Home">
-  <header class="py-32 container">
-    <h1 class="text-xl text-slate-50 mb-4">Pokemons</h1>
-	<p class="text-base text-slate-400 mb-10">Escolha o seu personagem e avalie seus detalhes</p>
-    <div class="flex flex-wrap gap-10">
-      {pokemons?.map((pokemon) => <Badge><a href={`pokemon/${pokemon.name}`}>{pokemon.name}</a></Badge>)}
-    </div>
-	<MorePokemons client:load page={currentPage}/>
-  </header>
-</Document>
+<Home/>

@@ -1,0 +1,22 @@
+---
+interface Props extends HeadTypes{}
+import '@/styles/global.css'
+import { Head } from "@/components/Head"
+import { Navbar } from "@/components/Navbar"
+import { Footer } from "@/components/Footer"
+import type { HeadTypes } from "@/components/Head/types"
+const { title, description, image, url, creator } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <Head title={title} description={description} image={image} url={url} creator={creator}/>
+</head>
+<body class="bg-black">
+    <Navbar/>
+    <slot/>
+    <Footer/>
+</body>
+</html>
