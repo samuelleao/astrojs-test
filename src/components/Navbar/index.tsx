@@ -1,13 +1,12 @@
-import { BsGithub, BsTwitter } from "react-icons/bs"
-import { FaLinkedinIn } from "react-icons/fa"
+import { Github, Linkedin, Twitter } from 'lucide-react';
 
 export function Navbar() {
     return (
         <nav>
             <ul className="container flex gap-2 mt-10">
-                <li><a href="" className="h-10 w-10 flex justify-center items-center bg-slate-900 text-slate-300 hover:bg-slate-800 rounded-lg text-sm" aria-label="Github"><BsGithub/></a></li>
-                <li><a href="" className="h-10 w-10 flex justify-center items-center bg-slate-900 text-slate-300 hover:bg-slate-800 rounded-lg text-sm" aria-label="Github"><FaLinkedinIn/></a></li>
-                <li><a href="" className="h-10 w-10 flex justify-center items-center bg-slate-900 text-slate-300 hover:bg-slate-800 rounded-lg text-sm" aria-label="Github"><BsTwitter/></a></li>
+                <li><a href="" className="h-10 w-10 flex justify-center items-center bg-slate-900 text-slate-300 hover:bg-slate-800 rounded-lg" aria-label="Github"><Github className='w-4'/></a></li>
+                <li><a href="" className="h-10 w-10 flex justify-center items-center bg-slate-900 text-slate-300 hover:bg-slate-800 rounded-lg" aria-label="Github"><Linkedin className='w-4'/></a></li>
+                <li><a href="" className="h-10 w-10 flex justify-center items-center bg-slate-900 text-slate-300 hover:bg-slate-800 rounded-lg" aria-label="Github"><Twitter className='w-4'/></a></li>
             </ul>
         </nav>
     )
