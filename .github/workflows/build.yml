@@ -1,0 +1,24 @@
+name: Build Site a cada 1 minuto
+
+on:
+  schedule:
+    - cron: '*/1 * * * *' # Executar a cada 1 minuto
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v2
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Executar build
+        run: npm run build # Substitua pelo comando de build do seu projeto
